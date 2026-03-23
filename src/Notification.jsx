@@ -6,7 +6,7 @@ const MOCK_NOTIFICATIONS = [
     id: 1,
     title: "HoD Review Update",
     status: "Approved",
-    message: "Your report has been approved.",
+    message: "Your research report has been approved successfully.",
     timestamp: new Date(),
     read: false,
   },
@@ -14,7 +14,31 @@ const MOCK_NOTIFICATIONS = [
     id: 2,
     title: "HoD Review Update",
     status: "Rejected",
-    message: "Please improve formatting and resubmit.",
+    message: "Formatting issues found. Please correct and resubmit.",
+    timestamp: new Date(),
+    read: false,
+  },
+  {
+    id: 3,
+    title: "HoD Review Update",
+    status: "Needs Revision",
+    message: "Add more references in section 2.",
+    timestamp: new Date(),
+    read: false,
+  },
+  {
+    id: 4,
+    title: "HoD Review Update",
+    status: "Approved",
+    message: "Your attendance report has been approved.",
+    timestamp: new Date(),
+    read: false,
+  },
+  {
+    id: 5,
+    title: "HoD Review Update",
+    status: "Rejected",
+    message: "Data mismatch found in your submission.",
     timestamp: new Date(),
     read: false,
   },
@@ -108,19 +132,19 @@ const styles = {
     position: "relative",
     fontSize: 22,
     padding: 10,
-    background: "#1e293b",
+    background: "darkslateblue",
     border: "none",
     borderRadius: 10,
     cursor: "pointer",
-    color: "#fff",
+    color: "white",
   },
 
   badge: {
     position: "absolute",
     top: -5,
     right: -5,
-    background: "#ef4444",
-    color: "#fff",
+    background: "red",
+    color: "white",
     borderRadius: "50%",
     fontSize: 10,
     padding: "2px 6px",
@@ -134,15 +158,15 @@ const styles = {
 
   panel: {
     width: 300,
-    background: "#0f172a",
-    color: "#fff",
+    background: "black",
+    color: "white",
     borderRadius: 12,
     padding: 15,
-    boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
+    boxShadow: "0 10px 30px black",
   },
 
   item: {
-    borderBottom: "1px solid rgba(255,255,255,0.1)",
+    borderBottom: "1px solid gray",
     padding: "10px 0",
   },
 
@@ -151,14 +175,14 @@ const styles = {
     fontWeight: "bold",
     color:
       status === "Approved"
-        ? "#22c55e"
+        ? "green"
         : status === "Rejected"
-        ? "#ef4444"
-        : "#f59e0b",
+        ? "red"
+        : "orange",
   }),
 
   time: {
     fontSize: 10,
-    color: "#94a3b8",
+    color: "gray",
   },
 };
